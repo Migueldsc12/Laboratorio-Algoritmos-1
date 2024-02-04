@@ -28,14 +28,11 @@ SALIDA: BOOLEANO QUE INDICA SI LOS DOS NUMEROS SON COPRIMOS O NO
 """
 def main() -> None:
     try:
-        num1 = int(input("Ingrese el primer número entero: \n"))
-        num2 = int(input("Ingrese el segundo número entero: \n"))
-        resultado = son_numeros_coprimos(num1, num2)
+        num1: int = int(input("Ingrese el primer número entero: \n"))
+        num2: int = int(input("Ingrese el segundo número entero: \n"))
+        resultado: int = son_numeros_coprimos(num1, num2)
 
-        if (resultado):
-            print(resultado)
-        else:
-            print(resultado)
+        print(resultado)
 
     except ValueError:
         print("Ingrese números enteros válidos.")
