@@ -11,6 +11,9 @@ def factN_rec(x: int, n: int) -> int:
     Returns:
     int -- El factorial de x.
     """
+    assert isinstance(x, int) and x >= 0, "x debe ser no negativo"
+    assert isinstance(n, int) and n > 0, "n debe ser positivo"
+
     if x < n:
         return 1
     else:
@@ -27,6 +30,9 @@ def factN_iter(x: int, n: int) -> int:
     Returns:
     int -- El factorial de x.
     """
+    assert isinstance(x, int) and x >= 0, "x debe ser no negativo"
+    assert isinstance(n, int) and n > 0, "n debe ser positivo"
+
     result: int = 1
     while x >= n:
         result *= x
@@ -43,6 +49,8 @@ def fusc_rec(n: int) -> int:
     Returns:
     int -- El n-ésimo número de la sucesión.
     """
+    assert isinstance(n, int) and n >= 0, "n should be a non-negative integer"
+
     if n == 0:
         return 0
     
@@ -66,6 +74,9 @@ def potencia_rec(n: int, m: int) -> int:
     Returns:
     int -- El resultado de la potencia n^m.
     """
+    assert isinstance(n, int), "n debe ser un entero"
+    assert isinstance(m, int) and m >= 0, "m debe ser un entero no negativo"
+
     if m == 0:
         return 1
     
@@ -86,6 +97,9 @@ def potencia_iter(n: int, m: int) -> int:
     Returns:
     int -- El resultado de la potencia n^m.
     """
+    assert isinstance(n, int), "n debe ser un entero"
+    assert isinstance(m, int) and m >= 0, "m debe ser un entero no negativo"
+
     result: int = 1
     while m > 0:
         if m % 2 == 1:
@@ -106,6 +120,9 @@ def mcd_rec(n: int, m: int) -> int:
     Returns:
     int -- El máximo común divisor entre n y m.
     """
+    assert isinstance(n, int) and n > 0, "n debe ser un entero positivo"
+    assert isinstance(m, int) and m > 0, "m debe ser un entero positivo"
+
     if n == m:
         return n
     
@@ -126,6 +143,9 @@ def mcd_iter(n: int, m: int) -> int:
     Returns:
     int -- El máximo común divisor entre n y m.
     """
+    assert isinstance(n, int) and n > 0, "n debe ser un entero positivo"
+    assert isinstance(m, int) and m > 0, "m debe ser un entero positivo"
+
     while n != m:
         if n > m:
             n -= m
@@ -146,6 +166,9 @@ def combinatorio_rec(n: int, k: int) -> int:
     Returns:
     int -- El coeficiente binomial de n sobre k.
     """
+    assert isinstance(n, int) and n >= 0, "n debe ser no negativo"
+    assert isinstance(k, int) and k >= 0, "k debe ser no negativo"
+
     if k == 0:
         return 1
     
@@ -166,6 +189,9 @@ def stirling_rec(n: int, k: int) -> int:
     Returns:
     int -- El número de Stirling de segunda clase.
     """
+    assert isinstance(n, int) and n >= 0, "n debe ser no negativo"
+    assert isinstance(k, int) and k >= 0, "k debe ser no negativo"
+    
     if k == 1 or k == n:
         return 1
     
@@ -192,6 +218,9 @@ def ackerman_rec(m: int, n: int) -> int:
     Returns:
     int -- El resultado de la función de Ackerman.
     """
+    assert isinstance(m, int) and m >= 0, "m debe ser no negativo"
+    assert isinstance(n, int) and n >= 0, "n debe ser no negativo"
+
     if m == 0:
         return n + 1
     
@@ -214,6 +243,11 @@ def bs_rec(A: List[int], l: int, r: int, x: int) -> int:
     Returns:
     int -- El índice del elemento buscado.
     """
+    assert isinstance(A, list), "A debe ser una lista"
+    assert isinstance(l, int) and l >= 0, "l debe ser un entero no negativo"
+    assert isinstance(r, int) and r >= 0, "r debe ser un entero no negativo"
+    assert isinstance(x, int), "x debe ser un entero"
+    
     if l > r:
         return -1
     mid: int = (l + r) // 2
